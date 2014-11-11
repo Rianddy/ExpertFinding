@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.custom.i18n.resources"
+		value="i18n/MessageResources" />
+	<package name="JobSeeker"  namespace="/"  extends="json-default">	
+		<global-results>
+			<result name="success">/WEB-INF/jsp/experts.jsp</result>
+		</global-results>	
+		<action name="getallexperts" class="com.ExpertFinding.struts2.action.GetAllExpertsAction" method="execute">
+			<result name="success">/WEB-INF/jsp/experts.jsp</result>
+		</action>
+		<action name="*_page">
+			<result>/WEB-INF/jsp/{1}.jsp</result>
+		</action>
+	</package>
+</struts>
